@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('stokbarang', 'StokbarangController');
 Route::resource('supplier', 'SupplierController');
 Route::resource('transaksipembelian', 'TransaksipembeliansController');
+Route::resource('transaksipenjualan', 'TransaksipenjualansController');
+Route::resource('detailtransaksipembelian', 'DetailtransaksipembeliansController');

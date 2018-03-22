@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TransaksiPembelian extends Model
+class TransaksiPembelians extends Model
 {
     //
     protected $table ='transaksipembelians';
@@ -16,16 +16,6 @@ class TransaksiPembelian extends Model
     {
         return $this->belongsTo('App\Supplier', 'id_supplier');
 
-    }
-
-    public function kategoribarangs () 
-    {
-        return $this->belongsTo('App\KategoriBarang' , 'id_kategoribarang');
-    }
-
-    public function stokbarangs () 
-    {
-        return $this->belongsTo('App\StokBarang' , 'id_stokbarang');
     }
 }
 

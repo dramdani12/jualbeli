@@ -15,6 +15,8 @@ class TransaksipenjualansController extends Controller
     public function index()
     {
         //
+         $transaksipenjualan = transaksipenjualans::all();
+        return view('transaksipenjualan.index',compact('transaksipenjualan'));
     }
 
     /**
@@ -25,6 +27,8 @@ class TransaksipenjualansController extends Controller
     public function create()
     {
         //
+          $transaksipenjualan = transaksipenjualans::all();
+        return view('transaksipenjualan.create',compact('transaksipenjualan'));
     }
 
     /**
@@ -36,6 +40,12 @@ class TransaksipenjualansController extends Controller
     public function store(Request $request)
     {
         //
+        $transaksipenjualan = new transaksipenjualans;
+        $transaksipenjualan->tanggal_jual = $request->a;
+        $transaksipenjualan->nama_customer = $request->b;
+        $transaksipenjualan->alamat = $request->c;
+        $transaksipenjualan->save();
+        return redirect('transaksipenjualan');
     }
 
     /**
@@ -55,9 +65,11 @@ class TransaksipenjualansController extends Controller
      * @param  \App\transaksipenjualans  $transaksipenjualans
      * @return \Illuminate\Http\Response
      */
-    public function edit(transaksipenjualans $transaksipenjualans)
+    public function edit($id)
     {
         //
+         $transaksipenjualan = transaksipenjualans::findOrFail($id);
+        return view('transaksipenjualan.edit',compact('transaksipenjualan'));
     }
 
     /**
@@ -67,9 +79,15 @@ class TransaksipenjualansController extends Controller
      * @param  \App\transaksipenjualans  $transaksipenjualans
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, transaksipenjualans $transaksipenjualans)
+    public function update(Request $request,$id)
     {
         //
+        $transaksipenjualan = transaksipenjualans::findOrFail($id);
+        $transaksipenjualan->tanggal_jual = $request->a;
+        $transaksipenjualan->nama_customer = $request->b;
+        $transaksipenjualan->alamat = $request->c;
+        $transaksipenjualan->save();
+        return redirect('transaksipenjualan');
     }
 
     /**
@@ -78,8 +96,11 @@ class TransaksipenjualansController extends Controller
      * @param  \App\transaksipenjualans  $transaksipenjualans
      * @return \Illuminate\Http\Response
      */
-    public function destroy(transaksipenjualans $transaksipenjualans)
+    public function destroy($id)
     {
         //
+        $transaksipenjualan = transaksipenjualans::findOrFail($id);
+        $transaksipenjualan ->delete();
+        return redirect()->route('transaksipenjualan.index');
     }
 }

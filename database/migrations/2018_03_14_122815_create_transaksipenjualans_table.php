@@ -15,7 +15,7 @@ class CreateTransaksipenjualansTable extends Migration
     {
         Schema::create('transaksipenjualans', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('tanggal_beli');
+            $table->date('tanggal_jual');
             $table->string('nama_customer');
             $table->text('alamat');
             $table->timestamps();

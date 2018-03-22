@@ -11,11 +11,6 @@ class stokbarang extends Model{
     protected $visible = ['nama_barang','stok','harga_jual','harga_beli','cover'];
     public $timestamps = true;
 
-    public function barangsuppliers () 
-    {
-        return $this->hasMany('App\BarangSupplier' , 'id_stokbarang');
-    }
-
     public function transaksipembelians () 
     {
         return $this->hasMany('App\TransaksiPembelian' , 'id_stokbarang');

@@ -17,14 +17,14 @@
 					<label class="control-lable">Nama Supplier</label>
 					<select class="form-control" name="b">
 					@foreach($supplier as $b)
-					<option value="{{$a->id}}">{{$b->namasupplier}}</option>
+					<option value="{{$b->id}}">{{$b->namasupplier}}</option>
 					@endforeach
 					</select>
 				</div>
 
 				<div class="form-group">
 					<label class="control-lable">Tanggal</label>
-					<input type="date" name="c" class="form-control" value="{{$pembelian->tanggal}}" required="">
+					<input type="date" name="c" class="form-control" value="{{$transaksipembelian->tanggal}}" required="">
 				</div>
 	
 				<div class="form-group">

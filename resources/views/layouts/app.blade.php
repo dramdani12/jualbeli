@@ -38,9 +38,22 @@
                     <ul class="nav navbar-nav">
                     @if(Auth::check())
                     <li><a href="{{url('/home')}}">Dashboard</a></li>
-                    <li><a href="{{ route('stokbarang.index') }}">StokBarang</a></li>
+
+                    <li><a href="{{ route('stokbarang.index') }}">Barang</a></li>
                     <li><a href="{{ route('supplier.index') }}">Supplier</a></li>
-                    <li><a href="{{ route('transaksipembelian.index') }}">Transaksi Pembelian</a></li>
+                    <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Transaksi <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('transaksipembelian.index') }}">TransaksiPembelian</a>
+                                        <a href="{{ route('transaksipenjualan.index') }}">TransaksiPenjualan</a>
+                                        <a href="{{ route('detailtransaksipembelian.index') }}">DetailTransaksiPembelian</a>
+                                    </li>
+                                </ul>
+                            </li>
                         @endif
                     </ul>
 

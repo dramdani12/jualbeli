@@ -15,6 +15,12 @@ class DetailtransaksipembeliansController extends Controller
     public function index()
     {
         //
+         $detailtransaksipembelian = DB::table('detailtransaksipembelians')
+                    ->join('stokbarangs','detailtransaksipembelians.id_stokbarang','=','stokbarangs.id')
+                    ->join('transaksipembelians','detailtransaksipembelians.id_transaksipembelian','=','transaksipembelians.id')
+                    ->join('suppliers','transaksipembelians.id_supplier','=','suppliers.id')
+                    ->select('detailtransaksipembelians.*','stokbarangs.nama_barang','transaksipembelians.tanggal_beli','suppliers.namasupplier')->get();
+        return view('detailtransaksipembelian.index',compact('detailtransaksipembelian'));
     }
 
     /**

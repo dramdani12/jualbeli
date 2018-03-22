@@ -3,9 +3,9 @@
 
 <div class="row">
 	<div class="col-xs-12">
-	<center><h1>Stok barang</h1></center>
+	<center><h1>Barang</h1></center>
 	<div class="panel panel-primary">
-		<div class="panel-heading">Stok Barang
+		<div class="panel-heading">Barang
 		<div class="panel-title pull-right"><a href="stokbarang/create">Tambah Data</a></div></div>
 		<div class="panel-body">
 			<table class="table">

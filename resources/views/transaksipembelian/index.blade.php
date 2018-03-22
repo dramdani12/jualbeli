@@ -11,16 +11,20 @@
 			<table class="table">
 				<thead>
 					<tr>
+						<th>nama barang</th>
 						<th>tanggal beli</th>
 						<th>nama supplier</th>
+						<th>stok</th>
 						<th colspan="2">Action</th>
 					</tr>
 				</thead>
 				<tbody>
 				@foreach($transaksipembelian as $data)
 					<tr>
+						<td>{{$data->namabarang}}</td>
 						<td>{{$data->tanggal_beli}}</td>
 						<td>{{$data->namasupplier}}</td>
+						<td>{{$data->stok}}</td>
 						<td><a class="btn btn-warning" href="transaksipembelian/{{$data->id}}/edit">Edit</a></td>
 							<td><form action="{{route('transaksipembelian.destroy',$data->id)}}" method="post">
 								<input type="hidden" name="_method" value="DELETE">

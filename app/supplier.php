@@ -18,9 +18,5 @@ class Supplier extends Model
         return $this->hasMany('App\TransaksiPembelian' , 'id_supplier');
     }
 
-    public function barangsuppliers () 
-    {
-        return $this->hasMany('App\BarangSuppliers' , 'id_supplier');
-    }
 
 }
